@@ -1,0 +1,9 @@
+<h3> Formulario de tarea</h3>
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre" />
+  </div>
+  <button type="submit">Agregar Tarea</button>
+</form>
+

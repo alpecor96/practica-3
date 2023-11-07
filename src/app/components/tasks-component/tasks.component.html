@@ -1,0 +1,14 @@
+<h3> Listado de tareas</h3>
+
+<ul>
+  <li *ngFor="let tarea of tareas" [ngStyle]="getTaskStyle(tarea)">
+    <strong> ID: </strong> {{ tarea.id }},
+    <strong> Nombre: </strong> {{ tarea.nombre }},
+    <strong> Completado: </strong> {{ tarea.completado }};
+    <button (click)="deleteTask(tarea)">Eliminar</button>
+    <button (click)="navigateToTaskDetail(tarea)">Detalle</button>
+  </li>
+</ul>
+
+
+

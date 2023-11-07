@@ -1,0 +1,11 @@
+
+<h3>Formulario para editar la tarea</h3>
+
+<form [formGroup]="taskForm">
+  <div>
+    <label for="nombre">Nombre de la tarea a completar:</label>
+    <input type="text" id="nombre" formControlName="nombre" />
+  </div>
+
+  <button (click)="updateTask()">Guardar Cambios</button>
+</form>
