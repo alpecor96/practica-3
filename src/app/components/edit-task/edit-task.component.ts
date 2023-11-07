@@ -23,7 +23,7 @@ export class EditTaskComponent {
   ) {
 
     this.taskForm = this.formBuilder.group({
-      nombre: ['', Validators.required]
+      nombre: ['', [Validators.required, Validators.minLength(3)]]
     });
 
     this.tasks = taskService.getTasks();

@@ -16,7 +16,7 @@ export class TaskFormComponent {
   constructor( private taskService: TaskService, private formBuilder: FormBuilder) {
     this.tareas = taskService.getTasks();
     this.taskForm = this.formBuilder.group({
-      nombre: ['', Validators.required]})
+      nombre: ['', [Validators.required, Validators.minLength(3)]]})
   }
 
 
