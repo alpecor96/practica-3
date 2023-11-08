@@ -76,16 +76,16 @@ export class TasksComponent {
   }
 
   deleteTask(task: Task) {
-    console.log('Eliminando tarea:', task);
-    this.confirmationService.confirm({
-      message: '¿Estás seguro de que deseas eliminar esta tarea?',
-      accept:()=>{
-        console.log('Eliminando tarea:', task);
+    // console.log('Eliminando tarea:', task);
+    // this.confirmationService.confirm({
+    //   message: '¿Estás seguro de que deseas eliminar esta tarea?',
+    //   accept:()=>{
+    //     console.log('Eliminando tarea:', task);
         this.taskService.removeTask(task.id);
         this.tareas = this.taskService.getTasks();
       }
-    })
-  }
+    //})
+  //}
 
   //extrea del arreglo la tarea cuyo ID se pasa por parámetro
   tareaById () {
