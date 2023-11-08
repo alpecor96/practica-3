@@ -1,11 +1,13 @@
+<h2>Detalle y Edición de Tarea</h2>
+<form *ngIf="task" (submit)="editarTarea()">
+  <label for="taskId">ID de la tarea:</label>
+  <input type="number" id="taskId" [(ngModel)]="task.id" name="taskId" disabled>
 
-<h3>Formulario para editar la tarea</h3>
+  <label for="taskName">Nombre de la tarea:</label>
+  <input type="text" id="taskName" [(ngModel)]="task.nombre" name="taskName" required>
 
-<form [formGroup]="taskForm">
-  <div>
-    <label for="nombre">Nombre de la tarea a completar:</label>
-    <input type="text" id="nombre" formControlName="nombre" />
-  </div>
+  <label for="taskCompleted">Completado:</label>
+  <input type="checkbox" id="taskCompleted" [(ngModel)]="task.completado" name="taskCompleted">
 
-  <button (click)="updateTask()">Guardar Cambios</button>
+  <button type="submit">Guardar</button>
 </form>

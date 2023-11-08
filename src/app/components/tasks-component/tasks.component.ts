@@ -5,6 +5,9 @@ import { Task } from '../../interfaces/task.interface';
 import { TaskService } from 'src/app/services/tasks.service';
 import { ToastrService } from 'ngx-toastr';
 import { ConfirmationService } from 'primeng/api';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+
+
 
 
 
@@ -20,6 +23,8 @@ export class TasksComponent {
   nuevaTarea: string = '';
   tareaAEliminar?: number;
   tareaAEditar?: number;
+  tarea: Task | undefined;
+  id:number = 0;
 
 
   constructor( private taskService: TaskService, private router: Router, private toastr: ToastrService, private confirmationService: ConfirmationService) {
@@ -71,14 +76,20 @@ export class TasksComponent {
   }
 
   deleteTask(task: Task) {
+    console.log('Eliminando tarea:', task);
     this.confirmationService.confirm({
       message: '¿Estás seguro de que deseas eliminar esta tarea?',
-      accept: () => {
+      accept:()=>{
         console.log('Eliminando tarea:', task);
         this.taskService.removeTask(task.id);
         this.tareas = this.taskService.getTasks();
       }
     })
+  }
+
+  //extrea del arreglo la tarea cuyo ID se pasa por parámetro
+  tareaById () {
+    this.tarea = this.taskService.getTask(this.id);
   }
 
 

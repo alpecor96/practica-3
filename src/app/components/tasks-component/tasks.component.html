@@ -1,14 +1,29 @@
-<h3> Listado de tareas</h3>
-
+<h3> Listado de tarea:</h3>
 <ul>
   <li *ngFor="let tarea of tareas" [ngStyle]="getTaskStyle(tarea)">
     <strong> ID: </strong> {{ tarea.id }},
     <strong> Nombre: </strong> {{ tarea.nombre }},
     <strong> Completado: </strong> {{ tarea.completado }};
     <button (click)="deleteTask(tarea)">Eliminar</button>
-    <button (click)="navigateToTaskDetail(tarea)">Detalle</button>
+    <button (click)="navigateToTaskDetail(tarea)" [routerLink]="['/task-detail', tarea.id]" [disabled]="tarea.completado">Detalle</button>
   </li>
 </ul>
+
+
+
+<h3> Extraer tarea:</h3>
+<input type="number" [(ngModel)]="id">
+<button (click)="tareaById()">Extraer tarea</button>
+<div *ngIf="tarea">
+  La tarea extraída es: <strong> ID: </strong> {{ tarea.id }},
+                        <strong> Nombre: </strong> {{ tarea.nombre }},
+                        <strong> Completado: </strong> {{ tarea.completado }};
+</div>
+
+
+
+
+
 
 
 

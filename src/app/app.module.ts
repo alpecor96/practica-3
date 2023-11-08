@@ -12,7 +12,6 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TaskService } from './services/tasks.service';
-import { TaskDetailComponent } from './components/task-detail/task-detail.component';
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
 
 
@@ -22,7 +21,6 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component';
     AppComponent,
     TasksComponent,
     TaskFormComponent,
-    TaskDetailComponent,
     EditTaskComponent,
   ],
 

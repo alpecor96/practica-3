@@ -17,8 +17,8 @@ export class TaskService {
 
 
   //devuelve una tarea del arreglo de tareas
-  getTask(id: number): Task | undefined {
-    const tarea: Task | undefined = this.arregloTareas.find(task => task.id === id);
+  getTask(id: number) {
+    const tarea = this.arregloTareas.find(task => task.id === id);
     return tarea;
   }
 
